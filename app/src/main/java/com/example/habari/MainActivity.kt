@@ -8,7 +8,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var navcontroller:NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +15,6 @@ class MainActivity : AppCompatActivity() {
          //Setting up the navHost Fragment
         val navHost=supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navcontroller=navHost.navController
-
          //setting up the bottomNavigation
         val navigationbar=findViewById<BottomNavigationView>(R.id.bottomNavigation)
         navigationbar.setupWithNavController(navcontroller)
