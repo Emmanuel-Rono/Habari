@@ -3,15 +3,17 @@ package com.example.habari.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.habari.Article
 import com.example.habari.R
 
 class DataAdapter:RecyclerView.Adapter<DataAdapter.NewsAdapter>()
 {
-    inner class NewsAdapter(itemview:View):RecyclerView.ViewHolder(itemview)
+
 
     private val diftUtilCallBack=object:DiffUtil.ItemCallback<Article>()
     {
@@ -35,10 +37,26 @@ class DataAdapter:RecyclerView.Adapter<DataAdapter.NewsAdapter>()
     }
 
     override fun onBindViewHolder(holder: NewsAdapter, position: Int) {
-        TODO("Not yet implemented")
+        //Get current item
+        val article = differ.currentList[position]
+        holder.itemView.apply {
+            Glide.with(this ).load(article.urlToImage).into(findViewById(R.id.ImView))
+            val newsTitle =findViewById<TextView>(R.id.tvTitle)
+            newsTitle.text=article.title
+        }
+
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+
     }
+    inner class NewsAdapter(itemview:View):RecyclerView.ViewHolder(itemview)
+
+    {
+        //val imgView=itemview.findViewById<ImageView>(R.id.ImView)
+        val tvtitle=itemview.findViewById<TextView>(R.id.tvTitle)
+
+    }
+
 }
