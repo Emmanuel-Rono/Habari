@@ -10,7 +10,7 @@ import com.example.habari.MainActivity
     (entities = [Article::class],
 version =1
 )
-    abstract class articleDatabase:RoomDatabase() {
+     abstract class articleDatabase:RoomDatabase() {
     //function that returns an articleDao
     abstract fun getDao(): articlesDao
 
@@ -28,7 +28,7 @@ version =1
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     articleDatabase::class.java,
-                    "Student_Database"
+                    "ArticlesDatabase"
                 ).build()
                 INSTANCE = instance
                 // return instance

@@ -1,4 +1,4 @@
-package com.example.habari.api.util
+package com.example.habari.util
 
 class constants {
     companion object {

@@ -1,7 +1,7 @@
 package com.example.habari.api
 
 import com.example.habari.NewsResponse
-import com.example.habari.api.util.constants.Companion.API_KEY
+import com.example.habari.util.constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -21,7 +21,7 @@ interface  NewsApi
     ): Response<NewsResponse>
 
 
-@GET("v1/everyhing")
+@GET("v1/everything")
 suspend fun getAllNews(
     @Query ("All")
     searchQuery:String,

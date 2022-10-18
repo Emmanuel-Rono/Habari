@@ -1,6 +1,6 @@
 package com.example.habari.api
 
-import com.example.habari.api.util.constants.Companion.BASE_URL
+import com.example.habari.util.constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
